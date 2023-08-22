@@ -9,7 +9,7 @@
         <button class="scripted-button">Active click</button>
         <a target="_top" href="otherpage.html">Go via link</a>
         <script>
-            location.href = "otherpage.html";
+            window.parent.location.href = "otherpage.html";
             document.querySelector('.scripted-button').addEventListener('click', () => {
                 location.href = "otherpage.html?method=buttonclick";
             });

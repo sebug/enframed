@@ -11,7 +11,7 @@
         <script>
             window.parent.location.href = "otherpage.html";
             document.querySelector('.scripted-button').addEventListener('click', () => {
-                location.href = "otherpage.html?method=buttonclick";
+                window.parent.location.href = "otherpage.html?method=buttonclick";
             });
         </script>
     </body>

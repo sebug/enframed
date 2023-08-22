@@ -8,14 +8,9 @@
         <h1>Enframed - testing iFrame Rights</h1>
         <p>This is the outer frame</p>
         <script>
-            let locationBefore = window.location;
-            Object.defineProperty(window.location, "href", {
-                get: function () {
-                    return locationBefore.href;
-                },
-                set: function (newVal) {
-                    console.log(newVal);
-                }
+            document.addEventListener('error', ev => {
+                console.log('listing to event');
+                console.log(ev);
             });
         </script>
         <iframe src="inner.html" sandbox="allow-top-navigation-by-user-activation allow-scripts"></iframe>

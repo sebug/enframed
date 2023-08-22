@@ -12,7 +12,11 @@
                 console.log('listing to event');
                 console.log(ev);
             });
+            const innerError = ev => {
+                console.log('Inner error');
+                console.log(ev);
+            };
         </script>
-        <iframe src="inner.html" sandbox="allow-top-navigation-by-user-activation allow-scripts"></iframe>
+        <iframe src="inner.html" sandbox="allow-top-navigation-by-user-activation allow-scripts" onerror="innerError"></iframe>
     </body>
 </html>

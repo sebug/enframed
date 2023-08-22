@@ -7,6 +7,18 @@
     <body>
         <h1>Enframed - testing iFrame Rights</h1>
         <p>This is the outer frame</p>
+        <script>
+            let locationBefore = window.location;
+            window.location = {
+                get href() {
+                    return locationBefore.href;
+                },
+                set href(newVal) {
+                    console.log(newVal);
+                }
+            };
+
+        </script>
         <iframe src="inner.html" sandbox="allow-top-navigation-by-user-activation allow-scripts"></iframe>
     </body>
 </html>
